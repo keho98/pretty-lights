@@ -11,7 +11,7 @@ class Mover implements Displayable {
     velocity = new PVector(1,0);
     acceleration = new PVector(0,0);
     mass = 4;
-    colorVal = color(68,214,44);
+    colorVal = color(255,255,255);
   }
   
   Mover(int posX, int posY, int velX, int velY, int mass, int colorVal) {

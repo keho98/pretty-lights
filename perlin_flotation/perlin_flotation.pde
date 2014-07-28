@@ -2,7 +2,7 @@ Mover[] movers;
 final int NUM_MOVERS = 100;
 
 void setup() {
-  size(640,360);
+  size(640,640);
   noStroke();
   movers = new Mover[NUM_MOVERS];
   for(int i = 0; i < NUM_MOVERS; i++) {
@@ -14,7 +14,7 @@ void draw() {
   fill(255, 10);
   rect(0, 0, width, height);
   for(int i = 0; i < NUM_MOVERS; i++) {
-      movers[i].applyForce(new PVector(0, -5));
+      movers[i].applyForce(new PVector(0, 5));
       movers[i].update();
       movers[i].checkEdges();
       movers[i].display(); 

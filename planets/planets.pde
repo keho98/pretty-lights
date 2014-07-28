@@ -6,7 +6,7 @@ final int NUM_MOVERS = 1;
  
 void setup() {
   size(960,960);
-  background(147,23,59);
+  background(200,16,46);
   noStroke();
   a = new Attractor();
   movers = new Mover[NUM_MOVERS];
@@ -27,7 +27,8 @@ void update() {
   for(int i = 0; i < NUM_MOVERS; i++) {
     PVector attractiveForce = a.attract(movers[i]);
     movers[i].applyForce(attractiveForce);
-    movers[i].update();   
+    movers[i].update();  
+    a.update(); 
   }
 }
 

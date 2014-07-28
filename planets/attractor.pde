@@ -2,11 +2,13 @@ class Attractor implements Displayable{
   // Our Attractor is a simple object that doesn’t move.
   // We just need a mass and a location.
   float mass;
+  float initialMass;
   PVector location;
 
   Attractor() {
     location = new PVector(width/2,height/2);
     mass = 20;
+    initialMass = 20;
   }
   
   PVector attract(Mover m) {
@@ -22,6 +24,10 @@ class Attractor implements Displayable{
   
     // Return the force so that it can be applied!
     return force;
+  }
+  
+  void update() {
+    mass = initialMass + noise(frameCount) * 10 - 5;
   }
 
   void display() {
