@@ -14,11 +14,12 @@ class Mover implements Displayable {
     colorVal = color(255,255,255);
   }
   
-  Mover(int posX, int posY, int velX, int velY, int mass, int colorVal) {
-    location = new PVector(400,width/2 -150);
-    velocity = new PVector(1,0);
+  Mover(float posX, float posY, int velX, int velY, int inputMass, int inputColorVal) {
+    location = new PVector(posX,posY);
+    velocity = new PVector(velX,velY);
     acceleration = new PVector(0,0);
-    mass = 4;
+    mass = inputMass;
+    colorVal = inputColorVal;
   }
 
 
