@@ -1,4 +1,4 @@
-class Attractor {
+class Attractor implements Displayable{
   // Our Attractor is a simple object that doesn’t move.
   // We just need a mass and a location.
   float mass;

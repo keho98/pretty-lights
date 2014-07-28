@@ -1,4 +1,4 @@
-class Mover {
+class Mover implements Displayable {
   PVector location;
   PVector velocity;
   PVector acceleration;
@@ -7,7 +7,7 @@ class Mover {
   int colorVal;
 
   Mover() {
-    location = new PVector(400,width/2 -200);
+    location = new PVector(400,width/2 -250);
     velocity = new PVector(1,0);
     acceleration = new PVector(0,0);
     mass = 4;
