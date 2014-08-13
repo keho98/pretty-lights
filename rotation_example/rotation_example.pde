@@ -1,4 +1,6 @@
 float degAngle = 15;
+float r = 75;
+float theta = 0;
 
 void setup() {
   size(500,500);
@@ -9,9 +11,12 @@ void setup() {
 
 void draw() {
   float angleInRadians = radians(degAngle);
-  degAngle += 5;
+  degAngle -= 3;
+  float x = r * cos(theta);
+  float y = r * sin(theta);
+  theta += .05;
   background(255);
-  translate(width/2, height/2);
+  translate(width/2 + x, height/2 + y);
   rotate(angleInRadians);
-  ellipse(50, 50, 20, 20);
+  rect(-15, -15, 30, 30);
 }
