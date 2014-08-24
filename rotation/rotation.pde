@@ -11,12 +11,12 @@ void setup() {
 
 void draw() {
   float angleInRadians = radians(degAngle);
-  degAngle -= 3;
+  degAngle -= .01;
   float x = r * cos(theta);
   float y = r * sin(theta);
+  r+= .5;
   theta += .05;
-  background(255);
   translate(width/2 + x, height/2 + y);
   rotate(angleInRadians);
-  rect(-15, -15, 30, 30);
+  ellipse(-15, -15, 15, 30);
 }
