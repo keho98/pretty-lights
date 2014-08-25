@@ -9,7 +9,7 @@ class Particle {
   Particle(PVector l) {
     location = l.get();
     acceleration = new PVector();
-    velocity = new PVector(random(-1,1),random(-2,0));
+    velocity = new PVector(random(-2,2),random(-4,0));
     lifespan = 255;
     mass = 1;
   }
@@ -27,13 +27,14 @@ class Particle {
   void update() {
     velocity.add(acceleration);
     location.add(velocity);
+    acceleration.mult(0);
     lifespan -= 2.0;
   }
 
   void display() {
-    stroke(0, lifespan);
+    noStroke();
     fill(175, lifespan);
-    ellipse(location.x,location.y,16,16);
+    ellipse(location.x,location.y,4,4);
   }
   
   boolean isDead() {
