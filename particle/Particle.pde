@@ -1,5 +1,6 @@
 import java.util.Random;
 Random generator;
+PImage img;
 
 class Particle {
   PVector location;
@@ -11,7 +12,7 @@ class Particle {
   float mass;
 
   Particle(PVector l) {
-    img = loadImage("particle.png");    
+    img = loadImage("particle.png");   
     location = l.get();
     acceleration = new PVector();
     generator = new Random();
