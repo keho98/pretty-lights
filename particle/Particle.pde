@@ -1,15 +1,23 @@
+import java.util.Random;
+Random generator;
+
 class Particle {
   PVector location;
   PVector velocity;
   PVector acceleration;
+  PImage img = null;
   
   float lifespan;
   float mass;
 
   Particle(PVector l) {
+    img = loadImage("particle.png");    
     location = l.get();
     acceleration = new PVector();
-    velocity = new PVector(random(-2,2),random(-4,0));
+    generator = new Random();
+    float vx = (float) generator.nextGaussian()*0.3;
+    float vy = (float) generator.nextGaussian()*0.3 - 1.0;
+    velocity = new PVector(vx,vy);  
     lifespan = 255;
     mass = 1;
   }
@@ -32,9 +40,9 @@ class Particle {
   }
 
   void display() {
-    noStroke();
-    fill(175, lifespan);
-    ellipse(location.x,location.y,4,4);
+    imageMode(CENTER);
+    tint(255,lifespan);
+    image(img,location.x,location.y);
   }
   
   boolean isDead() {
