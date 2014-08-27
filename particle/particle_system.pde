@@ -14,7 +14,6 @@ void draw() {
   ps.applyForce(g);
   
   ps.addParticle();
-  ps.addParticle();
   ps.run();
 }
 

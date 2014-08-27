@@ -16,8 +16,8 @@ class Particle {
     location = l.get();
     acceleration = new PVector();
     generator = new Random();
-    float vx = (float) generator.nextGaussian()*0.3;
-    float vy = (float) generator.nextGaussian()*0.3 - 1.0;
+    float vx = (float) generator.nextGaussian()*0.5;
+    float vy = (float) generator.nextGaussian()*0.5 - 0.5;
     velocity = new PVector(vx,vy);  
     lifespan = 255;
     mass = 1;
